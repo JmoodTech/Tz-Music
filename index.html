@@ -1,370 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TZ MUSIC | Official Music Platform</title>
+  <title>Tz Music</title>
 
-    <meta name="description"
-          content="TZ MUSIC - Official music platform for Tanzanian artists and music.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #080808;
-            color: white;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(8,8,8,0.95);
-            border-bottom: 1px solid #222;
-            padding: 18px 6%;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #ffd000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
-
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 6%;
-            background:
-                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
-                radial-gradient(circle at top right, #493d00, #080808 55%);
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .tag {
-            color: #ffd000;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 10vw, 90px);
-            line-height: .95;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            color: #bbb;
-            font-size: 17px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ffd000;
-            color: #000;
-            padding: 14px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 60px 6%;
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 30px;
-        }
-
-        .artists {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .artist {
-            background: #151515;
-            border: 1px solid #252525;
-            padding: 30px 15px;
-            border-radius: 15px;
-            text-align: center;
-            transition: .3s;
-        }
-
-        .artist:hover {
-            transform: translateY(-5px);
-            border-color: #ffd000;
-        }
-
-        .artist-avatar {
-            width: 80px;
-            height: 80px;
-            margin: auto;
-            margin-bottom: 15px;
-            border-radius: 50%;
-            background: #ffd000;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .artist p {
-            color: #888;
-            margin-top: 7px;
-            font-size: 13px;
-        }
-
-        .songs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .song {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: #151515;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #242424;
-        }
-
-        .cover {
-            width: 65px;
-            height: 65px;
-            border-radius: 8px;
-            background: #252525;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffd000;
-            font-size: 25px;
-        }
-
-        .song-info {
-            flex: 1;
-        }
-
-        .song-info h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .song-info p {
-            color: #888;
-            font-size: 13px;
-        }
-
-        .play {
-            width: 42px;
-            height: 42px;
-            border: 0;
-            border-radius: 50%;
-            background: #ffd000;
-            color: #000;
-            cursor: pointer;
-            font-size: 17px;
-        }
-
-        .others {
-            background: #101010;
-        }
-
-        footer {
-            padding: 35px 6%;
-            border-top: 1px solid #222;
-            text-align: center;
-            color: #777;
-        }
-
-        footer strong {
-            color: #ffd000;
-        }
-
-        @media (max-width: 700px) {
-            .artists {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .songs {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                margin-left: 10px;
-            }
-
-            .hero {
-                min-height: 65vh;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <div class="logo">TZ <span>MUSIC</span></div>
+  <div class="navbar">
+    <div class="logo">TZ<span>Music</span></div>
 
-        <div>
-            <a href="#artists">Artists</a>
-            <a href="#music">Music</a>
-            <a href="#others">Others</a>
-        </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#artists">Artists</a>
+      <a href="#songs">Songs</a>
+      <a href="#others">Others</a>
     </nav>
+  </div>
 </header>
 
+<main>
 
-<section class="hero">
+  <section class="hero" id="home">
+    <h1>Welcome to <span>Tz Music</span></h1>
+    <p>Official music platform for Tanzanian artists.</p>
+    <a href="#artists" class="btn">Explore Artists</a>
+  </section>
 
-    <div class="hero-content">
-
-        <div class="tag">OFFICIAL MUSIC PLATFORM</div>
-
-        <h1>TZ MUSIC</h1>
-
-        <p>
-            Discover music from Tanzanian artists,
-            listen to new releases and explore the
-            latest sounds from TZ.
-        </p>
-
-        <a href="#music" class="btn">
-            Explore Music
-        </a>
-
-    </div>
-
-</section>
-
-
-<section id="artists">
-
-    <h2 class="section-title">Our Artists</h2>
+  <section id="artists">
+    <h2 class="section-title">Our <span>Artists</span></h2>
 
     <div class="artists">
 
-        <div class="artist">
-            <div class="artist-avatar">BZ</div>
-            <h3>Bad Zoune</h3>
-            <p>Artist</p>
-        </div>
+      <div class="artist-card">
+        <div class="artist-img">BZ</div>
+        <h3>Bad Zoune</h3>
+        <p>Artist</p>
+      </div>
 
-        <div class="artist">
-            <div class="artist-avatar">DZ</div>
-            <h3>Dizza Tz</h3>
-            <p>Artist</p>
-        </div>
+      <div class="artist-card">
+        <div class="artist-img">DZ</div>
+        <h3>Dizza Tz</h3>
+        <p>Artist</p>
+      </div>
 
-        <div class="artist">
-            <div class="artist-avatar">ZM</div>
-            <h3>Zero MC</h3>
-            <p>Artist</p>
-        </div>
+      <div class="artist-card">
+        <div class="artist-img">ZM</div>
+        <h3>Zero MC</h3>
+        <p>Artist</p>
+      </div>
 
-        <div class="artist">
-            <div class="artist-avatar">MT</div>
-            <h3>Munna Tz</h3>
-            <p>Artist</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="music">
-
-    <h2 class="section-title">Latest Music</h2>
-
-    <div class="songs" id="songList">
-
-        <div class="song">
-
-            <div class="cover">♪</div>
-
-            <div class="song-info">
-                <h3>Music Coming Soon</h3>
-                <p>TZ MUSIC</p>
-            </div>
-
-            <button class="play">▶</button>
-
-        </div>
+      <div class="artist-card">
+        <div class="artist-img">MT</div>
+        <h3>Munna Tz</h3>
+        <p>Artist</p>
+      </div>
 
     </div>
+  </section>
 
-</section>
-
-
-<section id="others" class="others">
-
-    <h2 class="section-title">Others</h2>
+  <section id="songs">
+    <h2 class="section-title">Latest <span>Songs</span></h2>
 
     <div class="songs">
 
-        <div class="song">
+      <div class="song-card">
+        <div class="song-cover">🎵</div>
 
-            <div class="cover">♫</div>
-
-            <div class="song-info">
-                <h3>Other Artists</h3>
-                <p>More music coming soon</p>
-            </div>
-
-            <button class="play">▶</button>
-
+        <div class="song-info">
+          <h3>Coming Soon</h3>
+          <p>Tz Music</p>
         </div>
 
+        <button class="play-btn">▶</button>
+      </div>
+
     </div>
+  </section>
 
-</section>
+  <section id="others" class="others">
+    <h2 class="section-title"><span>Others</span></h2>
+    <p>Music from other artists will appear here.</p>
+  </section>
 
+</main>
 
 <footer>
-
-    <p>
-        © 2026 <strong>TZ MUSIC</strong>.
-        Official music platform.
-    </p>
-
+  <p>© 2026 <strong>Tz Music</strong>. All rights reserved.</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
